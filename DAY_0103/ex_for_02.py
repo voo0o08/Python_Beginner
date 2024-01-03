@@ -17,3 +17,5 @@ for food in foods:
     print(food)
 
 for food in foods:print(food) # 실행문이 한줄이면 이렇게 쭉 적어도 ㅇㅋ
+
+
