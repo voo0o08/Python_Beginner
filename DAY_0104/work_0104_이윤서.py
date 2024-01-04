@@ -86,7 +86,9 @@ print(a)
 .*.
 '''
 # col, row = 5, 5
-# L = [['.', '*', '*'], ['*', '.', '.'], ['.', '*', '.']]
+# L = [['.', '.', '*', '.', '.'], ['.', '.', '.', '*', '.'],
+#      ['.', '*', '.', '.', '.'], ['.', '*', '*', '*', '.'],
+#      ['*', ".", '*', '.', '.']]
 # col, row = 3, 3
 # L = [['.', '*', '*'], ['*', '.', '.'], ['.', '*', '.']]
 col, row = map(int, input().split())
@@ -97,11 +99,10 @@ print(L)
 for i in range(row):
     for j in range(col):
         if L[i][j] == "*": continue
-        else:
-            count = 0
-            for y in range(0 if i-1<0 else min(i-1, i), min(row, i+2)):
-                for x in range(0 if j-1<0 else min(j-1, j), min(col, j+2)): # 가로(col) 체크(세로 고정)
-                    if L[y][x] == "*":
-                        count += 1
-            L[i][j] = count
+        count = 0
+        for y in range(max(i-1, 0), min(row, i+2)):
+            for x in range(max(j-1, 0), min(col, j+2)): # 가로(col) 체크(세로 고정)
+                if L[y][x] == "*":
+                    count += 1
+        L[i][j] = count
 print(L)
