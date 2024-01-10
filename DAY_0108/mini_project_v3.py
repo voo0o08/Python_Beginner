@@ -112,7 +112,6 @@ def start(Map):
             return
         print()
 
-
 # ----------------------------- main문 -----------------------------
 while True:
     if end: # game함수 내에서 end 플래그가 on으로 바뀌면 게임 종료
